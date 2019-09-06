@@ -1,5 +1,6 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -26,12 +27,12 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     // 事务组中的事务状态列表
 
-    private static Map<String, List<String>> transactionTypeMap = new HashMap<String, List<String>>();
+    private static Map<String, List<JSONObject>> transactionTypeMap = new HashMap();
     // 事务组是否已经接收到结束的标记
     private static Map<String, Boolean> isEndMap = new HashMap<String, Boolean>();
 
-//    // 事务组中应该有的事务个数
-//    private static Map<String, Integer> transactionCountMap = new HashMap<String, Integer>();
+    // 事务组中应该有的事务个数
+    private static Map<String, Integer> transactionCountMap = new HashMap<String, Integer>();
 
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
@@ -64,40 +65,49 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
         if ("create".equals(command)) {
             // 创建事务组
-            transactionTypeMap.put(groupId, new ArrayList<String>());
+            transactionTypeMap.put(groupId, new ArrayList<JSONObject>());
         } else if ("add".equals(command)) {
             // 加入事务组
-            transactionTypeMap.get(groupId).add(transactionType);
+            JSONObject transaction = new JSONObject();
+            transaction.put("transactionId",transactionId);
+            transaction.put("transactionType",transactionType);
+            transactionTypeMap.get(groupId).add(transaction);
 
             if (isEnd) {
                 isEndMap.put(groupId, true);
-//                transactionCountMap.put(groupId, transactionCount);
+                transactionCountMap.put(groupId, transactionCount);
             }
 
-            JSONObject result = new JSONObject();
-            result.put("groupId", groupId);
-            result.put("transactionId",transactionId);
-            // 如果已经接收到结束事务的标记,则看是否需要回滚
-            if (isEndMap.get(groupId)) {
+            List<JSONObject> resultList = new ArrayList<JSONObject>();
+            // 如果已经接收到结束事务的标记，比较事务是否已经全部到达，如果已经全部到达则看是否需要回滚
+            if (isEndMap.get(groupId)&& transactionCountMap.get(groupId).equals(transactionTypeMap.get(groupId).size())) {
                 //commit
                 //commit
                 //commit
+                String resultCommand = "";
                 if (transactionTypeMap.get(groupId).contains("ROLLBACK")){
-                    result.put("command", "rollback");
-                    sendResult(result);
+                    resultCommand = "rollback";
                 } else {
-                    result.put("command", "commit");
-                    sendResult(result);
+                    resultCommand = "commit";
                 }
+                for (JSONObject o : transactionTypeMap.get(groupId)) {
+                    JSONObject result = new JSONObject();
+                    result.put("groupId", groupId);
+                    result.put("transactionId",o.get("transactionId"));
+                    result.put("command",resultCommand);
+                    resultList.add(result);
+                }
+                sendResult(resultList);
             }
 
         }
     }
 
-    private void sendResult(JSONObject result) {
+    private void sendResult(List<JSONObject> result) {
         for (Channel channel : channelGroup) {
-            System.out.println("发送数据:" + result.toJSONString());
-            channel.writeAndFlush(result.toJSONString());
+            String s = JSON.toJSONString(result);
+            System.out.println("发送数据:" + s);
+            channel.writeAndFlush(s);
         }
     }
 }

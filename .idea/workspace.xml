@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acb72e72-4612-423f-be2d-4e718368d97e" name="Default" comment="" />
+    <list default="true" id="acb72e72-4612-423f-be2d-4e718368d97e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txmanager/src/main/java/NettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/txmanager/src/main/java/NettyServerHandler.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/server1/target/" />
@@ -18,7 +22,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/txmanager/src/main/java/NettyServerHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1796">
+              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,6 +51,9 @@
     <replaceStrings>
       <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -88,11 +105,12 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="713" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -107,6 +125,32 @@
               <item name="test-transaction" type="b2602c69:ProjectViewProjectNode" />
               <item name="test-transaction" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="test-transaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test-transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="txmanager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test-transaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test-transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="txmanager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test-transaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test-transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="txmanager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test-transaction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test-transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="txmanager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -114,9 +158,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/txmanager/src/main/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15350224" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -127,6 +172,7 @@
       <recent name="com.luban.tack" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\test-transaction\test-transaction\txmanager\src\main\java" />
       <recent name="C:\Program Files\pro\test-transaction\transaction\src\main\java\com\luban" />
       <recent name="C:\Program Files\pro\test-transaction" />
     </key>
@@ -248,7 +294,8 @@
     <option name="totallyTimeSpent" value="10638000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -266,7 +313,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
@@ -502,8 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/txmanager/src/main/java/NettyServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        <state relative-caret-position="-1796">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
