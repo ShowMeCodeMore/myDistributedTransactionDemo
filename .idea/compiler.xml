@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="server1" />
+        <module name="txmanager" />
+        <module name="transaction" />
+        <module name="server2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="server1" target="1.5" />
+      <module name="server2" target="1.5" />
+      <module name="test-transaction" target="1.5" />
+      <module name="transaction" target="1.5" />
+      <module name="txmanager" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
